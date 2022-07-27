@@ -7,9 +7,12 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- Load the properties file -->
+	<context:property-placeholder location="classpath:sport.properties"/>
+
     <!-- Define your beans here -->
     <bean id="myFortune"
-    	class = "ru.gegcuk.springdemo.HappyFortuneService">
+    	class = "ru.gegcuk.springdemo.RandomFortuneService">
     </bean>
     
     <bean id="myCoach"
@@ -20,9 +23,12 @@
     <bean id="myCricketCoach"
     	class="ru.gegcuk.springdemo.CricketCoach">
     	
+    <!-- set up setter injection -->
     	<property name="fortuneService" ref="myFortune"/>
-    	<property name="email" value="cricketcoachemail@gmail.com"/>
-    	<property name="team" value="Wild coalas"/>
+    	
+    <!-- inject literal value -->
+    	<property name="email" value="${foo.email}"/>
+    	<property name="team" value="${foo.team}"/>
     </bean>
 </beans>
 

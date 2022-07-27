@@ -8,10 +8,13 @@ public class CricketCoach implements Coach {
 	
 	
 	public void setEmail(String email) {
+		System.out.println("CricketCoach: inside setter method - setEmail");
 		this.email = email;
+		
 	}
 
 	public void setTeam(String team) {
+		System.out.println("CricketCoach: inside setter method - setTeam");
 		this.team = team;
 	}
 
@@ -21,6 +24,14 @@ public class CricketCoach implements Coach {
 		System.out.println("CricketCoach: inside no-arg costructor");
 	}
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
 	public void setFortuneService(FortuneService fortuneService) {
 		System.out.println("CricketCoach: inside setter method - setFortuneService");
 		this.fortuneService = fortuneService;
